@@ -25,5 +25,6 @@ func main() {
 		return
 	}
 
-	rbts.ScanRobotsTxt(u.Host)
+	basicUrl := fmt.Sprintf("%s://%s", u.Scheme, u.Host)
+	rbts.ScanRobotsTxt(basicUrl)
 }
