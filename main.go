@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"net/url"
+	ports "rgb-scanner/internal/ports"
 	rbts "rgb-scanner/internal/robotstxt"
 )
 
@@ -27,4 +28,5 @@ func main() {
 
 	basicUrl := fmt.Sprintf("%s://%s", u.Scheme, u.Host)
 	rbts.ScanRobotsTxt(basicUrl)
+	ports.RunNmap(u.Host)
 }
